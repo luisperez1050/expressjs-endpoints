@@ -8,14 +8,15 @@ const port = process.env.PORT || 4000;
 app.use(bodyParser.text(), cors());
 
 // Set up home route
-
-// Set up second page
 app.get('/', (req, res) => {
-  res.send('This is the homepage');
-});
-// Set up second page
-app.get('/second', (req, res) => {
-  res.send('This is the second page');
+  const text = `
+    Api is up and running <br>
+    Here are some endpoint routes <br>
+    <ul>
+      <li> Post: /validate </li>
+    </ul>
+  `;
+  res.send(text);
 });
 
 // check if html is valid 
